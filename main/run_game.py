@@ -1,14 +1,17 @@
 import chess
 import chess.pgn
 from random_agent import RandomAgent
+from smart_agent import SmartAgent
+from smart_agent_2 import SmartAgent2
+
 from helpers import Helpers
 
-# from smart_agent import SmartAgent
 if __name__ == "__main__":
     board = chess.Board()
-    white_agent = RandomAgent(chess.WHITE)
-    black_agent = RandomAgent(chess.BLACK) 
+    # white_agent = RandomAgent(chess.WHITE)
+    black_agent = RandomAgent(chess.BLACK)
     
+    white_agent = SmartAgent2(chess.WHITE, max_depth=1)
     # white_agent = SmartAgent(chess.WHITE)
     # black_agent = SmartAgent(chess.BLACK)
 
@@ -29,4 +32,4 @@ if __name__ == "__main__":
     print("White!" if board.outcome().winner else ("Black!" if board.outcome().winner == False else "Draw!"))
 
     #Uncomment to get the PGN to evaluate with a different Chess Tool.
-    # print(Helpers.board_to_game(board))
+    print(Helpers.board_to_game(board))
