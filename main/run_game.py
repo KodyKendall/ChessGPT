@@ -11,7 +11,7 @@ if __name__ == "__main__":
     # white_agent = RandomAgent(chess.WHITE)
     black_agent = RandomAgent(chess.BLACK)
     
-    white_agent = SmartAgent2(chess.WHITE, max_depth=1)
+    white_agent = SmartAgent2(chess.WHITE, max_depth=3)
     # white_agent = SmartAgent(chess.WHITE)
     # black_agent = SmartAgent(chess.BLACK)
 
