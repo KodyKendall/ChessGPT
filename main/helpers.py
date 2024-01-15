@@ -4,7 +4,7 @@ import chess.pgn
 
 class Helpers:
     @staticmethod
-    def board_to_game(board):
+    def board_to_game(board, white_engine, black_engine):
         game = chess.pgn.Game()
 
         # Undo all moves.
@@ -22,4 +22,6 @@ class Helpers:
             board.push(move)
 
         game.headers["Result"] = board.result()
+        game.headers["White"] = white_engine.name
+        game.headers["Black"] = black_engine.name
         return game

@@ -9,11 +9,10 @@ from helpers import Helpers
 if __name__ == "__main__":
     board = chess.Board()
     # white_agent = RandomAgent(chess.WHITE)
-    black_agent = RandomAgent(chess.BLACK)
+    # black_agent = RandomAgent(chess.BLACK)
     
-    white_agent = SmartAgent2(chess.WHITE, max_depth=3)
-    # white_agent = SmartAgent(chess.WHITE)
-    # black_agent = SmartAgent(chess.BLACK)
+    white_agent = SmartAgent(chess.WHITE)
+    black_agent = SmartAgent2(chess.BLACK, max_depth=2)
 
     while (not board.is_checkmate() and not board.is_stalemate() and not board.is_insufficient_material() and not board.is_fivefold_repetition()):
         
@@ -32,4 +31,4 @@ if __name__ == "__main__":
     print("White!" if board.outcome().winner else ("Black!" if board.outcome().winner == False else "Draw!"))
 
     #Uncomment to get the PGN to evaluate with a different Chess Tool.
-    print(Helpers.board_to_game(board))
+    print(Helpers.board_to_game(board, white_agent, black_agent))

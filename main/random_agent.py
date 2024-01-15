@@ -6,15 +6,20 @@ import random
 class RandomAgent:
     def __init__(self, color):
         self.color = color
+        self.name = "RandomAgent"
+
+    def get_name(self):
+        return self.name
         
     def find_next_move(self, board):
         #the most basic version of this game is to just find a random next move and play it. 
         print(board.legal_moves)
-        print("Randomly picking a move!")
+        
         number_of_legal_moves = len(list(board.legal_moves))
         if number_of_legal_moves > 1:
             random_move_index = random.randint(0, number_of_legal_moves-1)
             random_move = list(board.legal_moves)[random_move_index]
+            print("Randomly picked a move from options! ", len(list(board.legal_moves)), board.san(random_move))
             return random_move
         else:
             return list(board.legal_moves)[0] #return last move

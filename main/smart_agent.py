@@ -6,6 +6,10 @@ from evaluation_function import EvaluationFunction
 class SmartAgent:
     def __init__(self, color):
         self.color = color
+        self.name = "SmartAgent1.0"
+
+    def get_name(self):
+        return self.name
     
     def find_next_move(self, board):
         #clone the board so we don't modify something on accident
